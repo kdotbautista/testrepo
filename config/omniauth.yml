@@ -1,0 +1,27 @@
+development:
+  -
+    provider: github
+    app_id: 945c28ce1431e7d7da7a
+    app_secret: 478b7e2c0387be66fe66015085ab5d51db454ad9
+    scope:
+staging:
+  -
+    provider: github
+    app_id: 945c28ce1431e7d7da7a
+    app_secret: 478b7e2c0387be66fe66015085ab5d51db454ad9
+    scope:
+production:
+  -
+    provider: github
+    app_id: 8de9c78c16c564be0f55
+    app_secret: 17d79cbc91b33261f33e177bd8e9a4944825e62d
+    scope:
+  -
+    provider: twitter
+    app_id: GG1YxGxf09Tvqzq7jE4QQ
+    app_secret: ZmRd82C5LET9Us7GMV17gSY6QkDyAe23XgnDi6VZM8
+  -
+    provider: facebook
+    app_id: 438359286238493
+    app_secret: 9ce192ccb788fcc12c317e96e8dc57c0
+    scope:

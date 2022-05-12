@@ -1,0 +1,287 @@
+div.alert-box.alert, div.alert-box.success {
+  background-color: $errorColor;
+}
+
+.button {
+  background-color: #000000;
+  border: 0;
+  @include border-radius(8px);
+  color: $color-brand;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;
+
+  &:hover {
+    background-color: $color-brand;
+    color: #000000 !important;
+  }
+
+  &.secondary {
+    background-color: transparent;
+    border: 0;
+    color: #C3C3C3;
+    box-shadow: none;
+    margin-left: 10px;
+
+    &:hover {
+      background-color: transparent;
+      color:  $color-brand;
+    }
+  }
+}
+
+input {
+  text-align: left;
+  @include box-shadow(rgba(#000, 0.6) 0 0 3px 2px inset);
+  @include border-radius(3px);
+  background: #fff;
+  padding: 2px 4px;
+  font-size: 20px;
+  font-family: $sansFont;
+  border: 1px solid #5b6768;
+  @include box-shadow(#5a6667 0 0 2px);
+  &:focus {
+    border-color: $mainColor;
+    outline-color: $mainColor;
+  }
+}
+
+/* Login Styles */
+button.login {
+  .social[class*="foundicon-"]:before {
+    font-size: 200%;
+    float: left;
+    margin-right: 0.5em;
+  }
+
+  width: 250px;
+  margin-top: 2em;
+  line-height: 1.8em;
+}
+
+/* Form Error Styles */
+div#error_explanation {
+  width: 100%;
+  border: rgba($errorColor, 0.8);
+
+  h2 {
+    background-color: $errorColor;
+    font-family: 'Open Sans Condensed', sans-serif;
+  }
+
+  ul {
+    margin-bottom: 0;
+    margin-left: 1em;
+  }
+
+  li {
+    list-style-position: inside;
+    color: #5B6768;
+  }
+}
+
+div.field_with_errors {
+  display: inherit;
+  background-color: transparent;
+
+  label {
+    padding: 5px;
+    background-color: $errorColor;
+  }
+
+  input, textarea {
+    margin-bottom: 0;
+    border-style: inset;
+    border: 2px solid $errorColor;
+  }
+}
+
+/* CFP Styles */
+p.strawman {
+  font-size: 18px;
+  margin-bottom: 3em;
+}
+
+li {
+  list-style-position: inside;
+}
+
+label {
+  color: #FFFFFF;
+  margin-top: 20px;
+}
+
+label.required:after {
+  color: $color-brand;
+  font-size: 16px;
+  font-weight: bold;
+  content: " *";
+}
+
+small {
+  font-size: 12px;
+  color: rgba(#FFFFFF, 0.8);
+}
+
+div.speaker-info, .login-panel {
+  background-color: rgba(#000000, 0.24);
+  padding: 20px;
+  margin-top: 7px;
+
+  div.speaker-thumb {
+    float: left;
+    width: 128px;
+    height: 128px;
+    margin: 0 20px 20px 0;
+
+    background-color: #E3E3E3;
+    @include border-radius(65px);
+
+    img {
+      @include border-radius(65px);
+      margin: 5px;
+    }
+
+    i.foundicon-torso {
+      &:before {
+        padding: 10px;
+      }
+      font-size: 110px;
+      color: #A6A6A6;
+    }
+  }
+
+  h4 {
+    font-size: 34px;
+    margin: 28px 0 0;
+  }
+
+  h5 {
+    margin: 0;
+  }
+
+  p {
+    font-size: 12px;
+  }
+}
+
+.login-panel h4 {
+  margin-top: 0;
+}
+
+div.speaker-info .button {
+  float: right;
+}
+div.speaker-info, .login-panel {
+  background-color: rgba(#000000, 0.24);
+  padding: 20px;
+  margin-top: 7px;
+
+  div.speaker-thumb {
+    float: left;
+    width: 128px;
+    height: 128px;
+    margin: 0 20px 20px 0;
+
+    background-color: #E3E3E3;
+    @include border-radius(65px);
+
+    img {
+      @include border-radius(65px);
+      margin: 5px;
+    }
+
+    i.foundicon-torso {
+      &:before {
+        padding: 10px;
+      }
+      font-size: 110px;
+      color: #A6A6A6;
+    }
+  }
+
+  h4 {
+    font-size: 34px;
+    margin: 28px 0 0;
+  }
+
+  h5 {
+    margin: 0;
+  }
+
+  p {
+    font-size: 12px;
+  }
+}
+
+.login-panel h4 {
+  margin-top: 0;
+}
+
+div.speaker-info .button {
+  float: right;
+}
+
+form .speaker-info {
+  background-color: transparent;
+  padding: 0;
+
+  input[type="file"] {
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    @include box-shadow(none);
+  }
+}
+
+h4.proposal {
+  font-family: $bodyFontFamily;
+  text-transform: none;
+}
+
+form .speaker-info {
+  background-color: transparent;
+  padding: 0;
+
+  input[type="file"] {
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    @include box-shadow(none);
+  }
+}
+
+h4.proposal {
+  font-family: $bodyFontFamily;
+  text-transform: none;
+}
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}

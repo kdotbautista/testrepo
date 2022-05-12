@@ -1,0 +1,174 @@
+#tito-title {
+  @extend h3;
+  margin: .5em 0 0;
+  padding-bottom: .5em;
+  text-align: center;
+}
+
+.blurb.register{ margin:0px 0px 10px 0px;}
+
+.convince a{
+  background-color: #000;
+  
+  text-transform: uppercase;
+  border: 0;
+  padding: 5px 10px;
+  margin: 0 auto 20px;
+  width:100%;
+  text-align:center;
+  border-radius:2px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size:15px;
+  
+  &:hover {
+    color: #fff;
+    cursor: hand;
+    cursor: pointer;
+  }
+}
+
+li.tito-ticket {
+  @extend .aside;
+  // foundation extend
+  @extend ul.unstyled-list;
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  height:80px;
+  border-bottom: 1px solid rgba(101, 66, 36, 0.4);
+   
+}
+
+.tito-ticket-price {
+    @extend h2;
+     @extend tc;
+  }
+
+label.tito-ticket-name {
+    @extend h3;
+    @extend tc;
+	position:absolute;
+	top:20px; 
+	left:40px;
+    color: $mainColor;
+    
+    @media (max-width: 767px) {
+	  	left:20px;
+	  	font-size: 20px !important;
+	  }
+    
+  }
+  
+.tito-ticket-price-quantity {
+	display: inline-block;
+} 
+
+  
+.tito-ticket-quantity {
+  width: 100%;
+  position:absolute;
+  top:0;
+  left:250px;
+  padding:21px 0px 0px 30px;
+  border-left: 1px solid rgba(101, 66, 36, 0.4);
+  height:80px;
+ 
+  @media (max-width: 767px) {
+  	left:150px;
+  	padding:21px 0px 0px 20px;
+  }
+  
+  &:before {
+    content: "Quantity";
+    display: inline-block;
+    float:left;
+    margin-right:10px;
+    padding-top:5px; 
+    
+    @media (max-width: 767px) {
+  		left:150px;
+  		font-size: 12px !important;
+  	}
+  }
+  input {
+    font-size: 20px;
+    width:40px;
+    background:#000 !important;
+    border: 1px solid rgba(101, 66, 36, 0.4);
+    color:#fff;
+    text-align: center;
+    
+    
+  }
+}
+
+.tito-ticket-price{ 
+	margin:0;
+	position:absolute;
+	top:24px; 
+	left:150px;
+	font-size: 28px !important;
+	
+	@media (max-width: 767px) {
+		left:90px;
+		font-size: 20px !important;
+	}
+}
+
+input.tito-submit {
+  background-color: $color-brand;
+  text-transform: uppercase;
+  border: 0;
+  padding: 10px 20px;
+  display: block;
+  margin: 0 auto 20px;
+  width:100%;
+  text-align:center;
+  &:hover {
+    background-color: #dedede;
+    cursor: hand;
+    cursor: pointer;
+  }
+}
+
+input#tito-discount-code-input {
+  margin: 0 auto;
+  width: 200px;
+}
+
+.tito-ticket.tito-locked .tito-ticket-price,
+.tito-ticket.tito-locked .tito-ticket-quantity {
+  display: none;
+}
+.tito-ticket.tito-locked .tito-ticket-price-quantity {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='11px' height='12px' viewBox='0 0 11 12' enable-background='new 0 0 11 12' xml:space='preserve'><path fill='#858585' d='M9,3.844V1.969V0.984H7.969V0H3.031v0.984H2v0.984v1.875H0v8.125h11V3.844H9z M4.062,1.969h2.875v1.875 H4.062V1.969z'/></svg>");
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 11px 12px;
+  padding-left: 20px;
+}
+.tito-ticket.tito-locked .tito-ticket-price-quantity:after {
+  content: "This ticket is locked *";
+}
+#tito-footer {
+  float: right;
+}
+
+#tito-footer a {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='232.375px' height='103.375px' viewBox='0 0 232.375 103.375' enable-background='new 0 0 232.375 103.375' xml:space='preserve'><g><polygon fill='#c7c7c7' points='67,0 0,0 0,19 23,19 23,101 44,101 44,19 67,19   '/><g><rect x='77' fill='#c7c7c7' width='19' height='18'/> <rect x='77' y='28' fill='#c7c7c7' width='19' height='73'/> </g> <path fill='#c7c7c7' d='M193.5,25.625c-21.47,0-38.875,17.405-38.875,38.875c0,21.471,17.405,38.875,38.875,38.875 S232.375,85.97,232.375,64.5C232.375,43.03,214.97,25.625,193.5,25.625z M172.5,64.5c0-12.15,9.85-22,22-22s22,9.849,22,22 c0,0.959-0.068,1.9-0.187,2.826c-1.812-13.967-14.785-15.513-18.938-15.513c-4.469,0-5.875,0.625-8.375,2.187v15 c0,0,2.188-1.5,5.125-1.5s9,1.688,9,8.938c0,7.232-4.906,10.037-9.602,10.037C182.375,86.474,172.5,76.322,172.5,64.5z'/><path fill='#c7c7c7' d='M147,43V27h-14V0h-18v27h-9v16h9v35c0,0,0,6.332,0,7s-0.002,16.646,31,16V85c0,0-13,0.906-13-7V43H147z'/></g></svg>");
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 29px 13px;
+  color: #c7c7c7;
+  font-size: .85em;
+  font-weight: bold;
+  padding-right: 35px;
+  text-decoration: none;
+}
+
+#tito-footer a:hover, #tito-footer a:focus, #tito-footer a:active {
+  color: #797979;
+  background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='232.375px' height='103.375px' viewBox='0 0 232.375 103.375' enable-background='new 0 0 232.375 103.375' xml:space='preserve'><g><polygon fill='#797979' points='67,0 0,0 0,19 23,19 23,101 44,101 44,19 67,19   '/><g><rect x='77' fill='#797979' width='19' height='18'/> <rect x='77' y='28' fill='#797979' width='19' height='73'/> </g> <path fill='#797979' d='M193.5,25.625c-21.47,0-38.875,17.405-38.875,38.875c0,21.471,17.405,38.875,38.875,38.875 S232.375,85.97,232.375,64.5C232.375,43.03,214.97,25.625,193.5,25.625z M172.5,64.5c0-12.15,9.85-22,22-22s22,9.849,22,22 c0,0.959-0.068,1.9-0.187,2.826c-1.812-13.967-14.785-15.513-18.938-15.513c-4.469,0-5.875,0.625-8.375,2.187v15 c0,0,2.188-1.5,5.125-1.5s9,1.688,9,8.938c0,7.232-4.906,10.037-9.602,10.037C182.375,86.474,172.5,76.322,172.5,64.5z'/><path fill='#797979' d='M147,43V27h-14V0h-18v27h-9v16h9v35c0,0,0,6.332,0,7s-0.002,16.646,31,16V85c0,0-13,0.906-13-7V43H147z'/></g></svg>");
+}

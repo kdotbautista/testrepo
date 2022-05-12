@@ -1,0 +1,14 @@
+<h2>Proposals</h2>
+<% if @proposals.blank? then %>
+<div class="alert alert-danger">
+Add proposal to finalize submission.
+</div>
+<p>
+  <%= link_to "<i class='general foundicon-add-doc'></i> New Proposal".html_safe, new_proposal_path, {:class => "btn"} %>
+</p>
+<% else %>
+<p>
+  <%= link_to "<i class='general foundicon-add-doc'></i> New Proposal".html_safe, new_proposal_path, {:class => "btn"} %>
+</p>
+<%= render "proposals/list" %>
+<% end %>

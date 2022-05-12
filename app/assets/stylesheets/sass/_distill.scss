@@ -1,0 +1,1017 @@
+// Webfonts from Google
+@import url("//fonts.googleapis.com/css?family=Satisfy");
+@import url(//fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+@font-face {
+  font-family: $cursiveFont;
+  font-style: normal;
+  font-weight: 400;
+  src: local('Satisfy'), url(//themes.googleusercontent.com/static/fonts/satisfy/v3/tmRzDlQs5wZmOn9mIuLa-QLUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Cond Light'), local('OpenSans-CondensedLight'), url(//themes.googleusercontent.com/static/fonts/opensanscondensed/v6/gk5FxslNkTTHtojXrkp-xGAzD5WKQVN4wSyA0MYYi4rr7w4p9aSvGirXi6XmeXNA.woff) format('woff');
+}
+
+// Default page background so white text is legible before bg pics load
+body {
+  background: #000;
+  padding: 50px 0 0;
+  &.register, &.sponsors {
+    @extend .sky-rubble;
+  }
+}
+
+// Font sizes
+
+p, li {
+  font-size: 15px;
+}
+h1 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 40px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 36px;
+  font-family: $cursiveFont;
+  &.subheading {
+    font-size: 26px;
+    margin-bottom: 20px;
+    margin-top: 1.5em;
+  }
+  &.blurb {
+    font-size: 20px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin: 40px 0 0 0;
+  }
+  &.about-distill {
+    font-size: 20px;
+    @media (max-width: 767px) {
+      margin-top: 30px;
+    }
+  }
+  @media (max-width: 767px) {
+    font-size: 26px;
+  }
+}
+
+h3 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 28px;
+  text-transform: uppercase;
+  &.subheading {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+}
+
+h4 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  margin-top: 0;
+  text-transform: uppercase;
+  a {
+    color: inherit;
+  }
+}
+
+
+a, a:link, a:visited {
+  color: $mainColor;
+  &:hover {
+    color: lighten($mainColor, 10%)
+  }
+  &:active {
+    color:#fff;
+  }
+}
+
+.anchorlink {
+  position: absolute;
+  top: -50px;
+  height: 10px;
+}
+
+a.orange-button {
+  background-color: $color-brand;
+  text-transform: uppercase;
+  border: 0;
+  padding: 10px 20px;
+  margin: 0 auto 40px;
+  @include border-radius(5px);
+  color: #000;
+  display: inline-block;
+  &:hover {
+    background-color: #dedede;
+    cursor: hand;
+    cursor: pointer;
+    color: #000;
+  }
+}
+
+.section {
+  position: relative;
+  &.speakers {
+    padding-bottom: 40px;
+  }
+  .section-title {
+    padding-top: 40px;
+  }
+}
+
+// Sky background
+.sky {
+  background: hsl(187, 22%, 61%) url(/assets/bg-slice.jpg) 0 0 fixed repeat-x;
+  &:before {
+    content: "";
+    top: 300px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    background: url(/assets/lights.png) 0 0 repeat-x;
+  }
+}
+.sky-shadow {
+  top: 0;
+  left: 0;
+  position: relative;
+  @include background-image(radial-gradient(center center, circle closest-corner, transparent 0%, transparent 60%, #010101 100%));
+}
+
+.sky-rubble {
+  background: #000 url(/assets/bg-rubble.png) 0 0 repeat;
+}
+.sky-grey {
+  background-color: hsl(230, 8%, 15%);
+}
+.sky-black {
+  background-color: #000;
+}
+.bg-black {
+  background-color: hsla(0, 100%, 0%, .8);
+  padding: 0 0 20px;
+  .row {
+    padding: 40px 0 0;
+  }
+}
+// Blue background
+.shade {
+  background-color: hsla(157, 15%, 15%, .4);
+  padding: 40px 0;
+}
+// Nav
+.nav-links {
+  display: none;
+  @media (max-width: 767px) {
+    display: none;
+    background-color: #000;
+    padding-bottom: 30px;
+  }
+  .nav a {
+	.current {color: #fff !important; }
+
+    @media (max-width: 767px) {
+      display: block;
+	  text-align: left;
+      clear: both;
+      line-height: 50px;
+      border-bottom: 1px solid rgba(101, 66, 36, 0.4);
+    }
+  }
+}
+
+.nav a.current {color: #fff !important; }
+
+.nav-container {
+  // Stacking order context for the :after glow pseudo element
+  position: relative;
+  z-index: 1;
+  // End stackong order context
+  .nav-wrapper {
+    background: #000;
+    min-height: 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    border-bottom: 1px solid hsla(27, 47%, 27%, 0.4);
+    &:after {
+      z-index: -1;
+      content: '';
+      overflow: hidden;
+      margin: 0 auto;
+      position: absolute;
+      width: 100%;
+      height: 10px;
+      @include background-image(
+      radial-gradient(center -30px, ellipse farthest-side, hsla(17, 86%, 31%, 0.1) 60%, hsla(0, 0%, 100%, 0)),
+      radial-gradient(center -30px, ellipse farthest-side, hsla(37, 71%, 49%, 0.1) 30%, hsla(0, 0%, 100%, 0))
+      );
+    }
+  }
+}
+p.nav {
+  // Add space on the left for the top link
+  margin: 0 0 0 -50px;
+  padding: 0;
+  a {
+    display: inline-block;
+    padding: 0 20px;
+    line-height: 50px;
+    font-family: 'Satisfy', cursive;
+    font-size: 20px;
+    color: $color-brand;
+    &:hover {
+      color: #fff;
+    }
+    &.mobile-dropdown {
+      position: absolute;
+      top: 8px;
+    }
+    &.login {
+      color: lighten($color-accent,10%);
+      font-size: 22px;
+      font-family: 'Open Sans Condensed';
+      text-transform: uppercase;
+      padding: 0 10px;
+    }
+    &.top {
+      color: lighten($color-accent,10%);
+      font-size: 14px;
+      &.hidden {
+        visibility: hidden;
+      }
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+  .link-style:hover {
+    cursor: hand;
+    cursor: pointer;
+  }
+  @media (max-width: 767px) {
+    // remove space on the left
+    margin-left: 0;
+  }
+}
+
+// Main logo
+.logo {
+  margin: 50px auto 10px;
+  display:block;
+  // The "X" logo graphic
+  .logobug {
+    display:block;
+    margin: 0 auto;
+    background: transparent url(distill-logo.svg) center 0 no-repeat;
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    @media (max-width: 767px) {
+      width: 70px;
+      height: 70px;
+    }
+  }
+  // DISTILL wordmark
+  .wordmark {
+    background: transparent url(distill-wordmark.svg) center 0 no-repeat;
+    margin: 40px auto 0;
+    display:block;
+    background-size: contain;
+    width: 440px;
+    height: 93px;
+    @media (max-width: 767px) {
+      width: 250px;
+      height: 100px;
+      margin-top: 20px;
+    }
+  }
+}
+
+// Date and Time
+.deets span{
+  white-space: nowrap;
+  @media (max-width: 800px) {
+    display: block;
+  }
+}
+
+
+
+// hexagonical spacer
+.vertical-divider {
+  background: transparent url($hex-url) center 0 no-repeat;
+  //background: transparent url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIyMDBweCIgaGVpZ2h0PSIyMDBweCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwMCAyMDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8cG9seWdvbiBmaWxsPSIjRkZGRkZGIiBwb2ludHM9IjEzLjQ5OSw0OS44NzYgOTkuODg3LDAgMTg2LjI4NCw0OS44NzkgMTg2LjI4NCwxNDkuNjM1IDk5Ljg4NywxOTkuNTE2IDEzLjQ5OSwxNDkuNjMgIi8+Cjwvc3ZnPg==) center 0 no-repeat;
+  background-size: contain;
+  margin: 0 20px 3px;
+  display: inline-block;
+  width:  11px;
+  height: 11px;
+  @media (max-width: 800px) {
+    display: block;
+    margin: 10px auto;
+  }
+}
+
+// Registration banner
+@mixin triangle($top, $left, $border-color, $border-width) {
+  content: '';
+  top: $top;
+  left: $left;
+  border-color: $border-color;
+  border-style:solid;
+  border-width: $border-width;
+  height:0px;
+  width:0px;
+  position: relative;
+  float: left;
+}
+
+.banner_container {
+  margin: 40px auto;
+  width: 360px;
+  height: 50px;
+  display: block;
+  &.videos {
+    width: 380px;
+    span.rectangle {
+      width: 280px;
+    }
+  }
+  a {
+    span.forks {
+      float: left;
+      display: inline-block;
+      position: relative;
+      width: 40px;
+      height: 50px;
+      &:before {
+        @include triangle(0px,-30px,$mainColor transparent transparent, 50px);
+      }
+      &:after {
+        @include triangle(-150px,-30px,transparent transparent $mainColor, 50px);
+      }
+    }
+    span.rectangle {
+      display: inline-block;
+      background: $mainColor;
+      float: left;
+      width: 280px;
+      text-align: center;
+      font-family: "Open Sans Condensed", sans-serif;
+      font-size: 28px;
+      text-transform: uppercase;
+      margin: 0 auto;
+      padding: 0px;
+      line-height: 50px;
+      color: #000;
+    }
+    &:hover {
+      cursor: hand;
+      cursor: pointer;
+      span.forks {
+        &:before {
+          @include triangle(0px,-30px,#000 transparent transparent, 50px);
+        }
+        &:after {
+          @include triangle(-150px,-30px,transparent transparent #000, 50px);
+        }
+      }
+      span.rectangle {
+        background: #000;
+        color: $mainColor;
+      }
+    }
+  }
+}
+
+// Moon Link
+.moon-container {
+  position: absolute;
+  top: -54px;
+  left: 20px;
+  width: 184px;
+  height: 133px;
+  background: transparent image-url('goodnightmoon.png') bottom center no-repeat;
+  a {
+    display: block;
+    width: 184px;
+    height: 133px;
+    span {
+      visibility: hidden;
+    }
+  }
+}
+
+// Twitter badge
+.twitter-container {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  width: 46px;
+  a {
+    span.rectangle {
+      display: inline-block;
+      background: hsl(37, 16%, 16%);
+      height: 36px;
+      width: 100%;
+    }
+    span.forks {
+      display: inline-block;
+      position: relative;
+      width: 46px;
+      height: 43px;
+      &:before {
+        @include triangle(-49px,0px,transparent transparent transparent hsl(37, 16%, 16%), 46px);
+      }
+      &:after {
+        @include triangle(-140px,-46px,transparent hsl(37, 16%, 16%) transparent transparent, 46px);
+      }
+    }
+    span.graphic {
+      position: absolute;
+      top: 8px;
+      left: 7px;
+      i {
+        color: hsla(187, 100%, 50%, 0.61);
+        font-size: 30px;
+        line-height: 40px;
+        text-align: center;
+      }
+    }
+    &:hover {
+      cursor: hand;
+      cursor: pointer;
+      span.forks {
+        &:before {
+          @include triangle(-49px,0px,transparent transparent transparent hsl(37, 16%, 36%), 46px);
+        }
+        &:after {
+          @include triangle(-140px,-46px,transparent hsl(37, 16%, 36%) transparent transparent, 46px);
+        }
+      }
+      span.rectangle {
+        background: hsl(37, 16%, 36%);
+        i {
+          color: hsla(187, 100%, 50%, 0.81);
+        }
+      }
+    }
+  }
+}
+// Bottlescape
+.city-wrapper {
+  background: transparent image-url('city.png') bottom center no-repeat;
+  position: relative;
+  height: 270px;
+  width: 100%;
+  @include background-size(cover);
+  @media (max-width: 767px) {
+    background-image: none;
+    height: 40px;
+  }
+}
+.city-wrapper-two {
+  background: transparent image-url('city-two.png') bottom center no-repeat;
+  position: relative;
+  height: 170px;
+  width: 100%;
+  @include background-size(cover);
+  @media (max-width: 767px) {
+    background-image: none;
+    height: 40px;
+  }
+}
+
+
+h3.deets, .about h3 {
+  font-family: $sansFont;
+  font-size: 28px;
+  margin-bottom: 0;
+  span{
+    white-space: nowrap;
+    @media (max-width: 800px) {
+      display: block;
+    }
+  }
+}
+
+// Speakers
+.speaker {
+  margin: 0 0 40px;
+  animation: speaker-hover-off 0.5s;
+	-webkit-animation: speaker-hover-off 0.5s;
+	animation-iteration-count:1;
+	-webkit-animation-iteration-count:1;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+  a {
+    display:block;
+    h2 {
+      margin-bottom: 3px;
+      font-size: 27px;
+    }
+  }
+  p {
+    margin: 0;
+  }
+  &:hover{
+  	position:relative;
+    animation: speaker-hover 0.5s;
+	-webkit-animation: speaker-hover 0.5s;
+	animation-iteration-count:1;
+	-webkit-animation-iteration-count:1;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+  }
+}
+
+
+@keyframes speaker-hover
+{
+	0%   {top:0;}
+	100% {top:-10px;}
+}
+
+@-webkit-keyframes speaker-hover
+{
+	0%   {top:0;}
+	100% {top:-10px;}
+}
+
+@keyframes speaker-hover-off
+{
+	0%   {top:-10px;}
+	100% {top:0px;}
+}
+
+@-webkit-keyframes speaker-hover-off
+{
+	0%   {top:-10px;}
+	100% {top:0px;}
+}
+
+
+p.tc a {
+  &:hover{
+    margin-top: 0;
+  }
+}
+.speaker-details {
+  .row {
+    padding-top: 80px;
+    padding-bottom: 20px;
+    &.section-title {
+      padding-top: 20px;
+    }
+    img {
+      margin-top: 70px;
+      @media (max-width: 767px) {
+        margin-top: 0;
+      }
+    }
+    @media (max-width: 767px) {
+      margin-bottom: 0;
+    }
+  }
+}
+.aside {
+  background-color: hsla(255,50%,0%,.3);
+  padding: 10px 15px;
+  margin-top: 62px;
+  p, h3 {
+    margin-top: 0;
+    margin-bottom: 4px;
+  }
+  @media (max-width: 767px) {
+    margin-top: 0;
+  }
+}
+
+
+.hex {
+  -webkit-mask-image: url($hex-url);
+  -moz-mask-image: url($hex-url);
+  background-size: contain;
+  width:  200px;
+  height: 200px;
+  margin: 0 auto;
+  display: block;
+}
+
+.hex-box {
+  background: url($hex-url) 0 0;
+  background-size: contain;
+  width:  140px;
+  height: 140px;
+  margin: 0 auto;
+  display: block;
+  padding-top: 40px;
+  h1,h2 {
+    color: #000;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  h2 {
+    font-size: 27px;
+  }
+  .hex-icon {
+    display: block;
+    margin: -20px auto 0;
+  }
+}
+
+// Logistics & Constellations
+
+@mixin mobile-logistics {
+  @media (max-width: 767px) {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    clear: both;
+    margin-left: 20px;
+  }
+}
+
+.logistics {
+  .day1, .day2 {
+    position: relative;
+    h1 {
+      display: inline-block;
+      float: left;
+      margin-right: 20px;
+      @media (max-width: 767px) {
+        display: block;
+        clear: both;
+        margin-left: 20px;
+      }
+      a, a:link {
+        color: #fff;
+      }
+    }
+    ul.unstyled-list li {
+      position: absolute;
+      display: block;
+      h2 {
+        font-size: 22px;
+        margin-bottom: 2px;
+      }
+      p {
+        margin-left: 10px;
+      }
+      @media (max-width: 767px) {
+        // Mobile list of events
+        list-style-image: image-url($hex-url);
+        position: relative;
+        display: block;
+        float: left;
+      }
+    }
+  }
+  .day1 {
+    height: 200px;
+    margin-top: 20px;
+    .constellation-one {
+      position: absolute;
+      top: 70px;
+      left: 60px;
+    }
+    ul.unstyled-list li {
+      &:nth-of-type(1) {
+        top: 140px;
+        left: 0;
+        @include mobile-logistics;
+      }
+      &:nth-of-type(2) {
+        top: 47px;
+        left: 238px;
+        @include mobile-logistics;
+      }
+      &:nth-of-type(3) {
+        top: 139px;
+        left: 455px;
+        @include mobile-logistics;
+      }
+      &:nth-of-type(4) {
+        top: 35px;
+        left: 830px;
+        @include mobile-logistics;
+      }
+    }
+  }
+  .day2 {
+    height: 300px;
+    margin-top: 40px;
+    .constellation-two {
+      position: absolute;
+      top: 70px;
+      left: 80px;
+      }
+    ul.unstyled-list li {
+      &:nth-of-type(1) {
+        top: 140px;
+        left: 0;
+        @include mobile-logistics;
+      }
+      &:nth-of-type(2) {
+        top: 127px;
+        left: 500px;
+        @include mobile-logistics;
+      }
+      &:nth-of-type(3) {
+        top: 82px;
+        left: 850px;
+        @include mobile-logistics;
+      }
+    }
+  }
+}
+
+ul.unstyled-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    list-style-image: none;
+  }
+}
+.moon {
+  position: absolute;
+  top: -10px;
+  left: 593px;
+  @include background-image(
+    radial-gradient(center center, ellipse contain, hsla(26,86%,79%,.3) 40%, hsla(0, 0%, 100%, 0))
+    );
+  padding: 40px;
+}
+
+// Schedule
+.large-bottles {
+  background: transparent url(large-bottles.svg) center bottom repeat-x;
+  @media (max-width: 767px) {
+    background-image: none;
+    margin-bottom: 80px;
+  }
+}
+.bottle-wrapper {
+  width: 773px;
+  margin: 0 auto;
+  @media (max-width: 767px) {
+    width: 100%;
+    background: black;
+    float: left;
+  }
+  .bottle-top {
+    margin-top: 60px;
+    background: transparent url(bottle-bg-top.png) left top no-repeat;
+    height: 211px;
+    @media (max-width: 767px) {
+      background-image: none;
+    }
+    .title {
+      position: relative;
+      top: 56px;
+    }
+  }
+  .bottle-middle {
+    background: transparent url(bottle-bg-middle.png) left top repeat-y;
+    width: 773px;
+    @media (max-width: 767px) {
+      background-image: none;
+      width: 100%;
+    }
+    .schedule-wrapper {
+      margin: 0 90px 0 14px;
+      @media (max-width: 767px) {
+        margin: 0;
+      }
+    }
+  }
+  .bottle-bottom {
+    margin-bottom: 40px;
+    background: transparent url(bottle-bg-bottom.png) left top no-repeat;
+    height: 137px;
+    @media (max-width: 767px) {
+      background-image: none;
+      height: 0;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+table.measurements {
+  background-color: transparent;
+  padding: 30px 0 0;
+  margin: 0;
+  border: none;
+  border-spacing: 0;
+  width: 100%;
+  tr {
+    td:first-of-type {
+      background: url('beaker-line.png') top left repeat-y;
+      background-position: 0 -8px;
+    }
+  }
+  tr:first-of-type {
+    td {
+      background: transparent;
+    }
+  }
+  tr:nth-child(even) {
+    background-color: transparent;
+  }
+  td {
+    border-bottom: 1px solid #fff;
+  }
+  tr td {
+    color: #fff;
+    margin: 0;
+    font-size: 14px;
+    @media (max-width: 767px) {
+      font-size: 16px;
+      padding: 0 16px 0 0;
+      white-space: wrap;
+    }
+    &.time {
+
+      @media (max-width: 767px) {
+        padding: 5px 5px 20px 10px;
+        font-size:13px;
+      }
+
+      span {
+        white-space: nowrap;
+        padding: 0 0 0 80px;
+        text-transform: uppercase;
+        display: block;
+        position: relative;
+        @media (max-width: 767px) {
+			padding: 0 0 0 35px;
+      	}
+      }
+    }
+    &.session {
+      padding: 9px 0 7px 40px;
+      width: 50%;
+      @media (max-width: 767px) {
+        padding: 5px 0 20px 10px;
+      }
+      span {
+        display: block;
+        line-height: 1.2em;
+        &.title {
+          font-size: 13px;
+          padding-bottom: 0.2em;
+          @media (max-width: 767px) {
+            padding-bottom: 10px;
+
+          }
+        }
+        &.name {
+          font-size: 11px;
+          opacity:0.5;
+        }
+      }
+    }
+  }
+}
+
+// About
+.about-wrapper {
+  margin: 40px 0 30px;
+  .coc {
+    margin-top: 40px;
+  }
+}
+
+// Sponsors
+.sponsors {
+  padding: 20px 0;
+  h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+
+    &.presented{ margin-top:30px; }
+
+    img {clear:both; display:block; margin:0 auto; padding:15px 0px;}
+
+    @media (max-width: 800px) {
+      display: block;
+      text-align: center;
+    }
+
+  }
+  h1 {
+    img {padding:0px 10px;}
+  }
+}
+
+// VIDEOS
+#videos {
+  padding-bottom: 20px;
+}
+
+.video h3 {
+  padding: 20px 5px 20px 10px;
+  a {
+    display: block;
+  }
+}
+a .arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid $mainColor;
+  margin: 10px;
+  margin-top: -3px;
+  float:right;
+  display: inline-block;
+}
+a:hover .arrow-right {
+  border-left: 20px solid lighten($mainColor, 10%);
+}
+
+.hidden { display: none; }
+
+.cfp {
+  margin-top: 25px;
+  z-index: 100;
+}
+// Text alignment utility classes
+.clear { clear: both;}
+.tc { text-align: center; }
+
+.tr {
+  text-align: right;
+  text-transform: uppercase;
+}
+.tl {
+  text-align: left;
+  vertical-align:top;
+  a {
+    display: inline-block;
+    height: 45px;
+    margin: -15px 0 0 6px;
+    vertical-align: middle;
+  }
+}
+
+//div alignment
+.dl {
+  float: left;
+}
+
+.dr {
+  float: right;
+}
+
+.row.email-signup {
+  form {
+    margin: 10px 0 0 0;
+  }
+  input[type="text"] {
+    position: relative;
+    top: -2px;
+    display: inline-block;
+    width: 60%;
+  }
+}
+
+.ey_logo {
+  width: 150px;
+  margin: 10px;
+  vertical-align: middle;
+}
+
+@media only screen and (max-width: 767px) {
+  .tc { text-align: center; margin-bottom: 10px; }
+  .tl { text-align: center; margin-bottom: 10px; }
+  .tr { text-align: center; margin-bottom: 10px; }
+  .row.email-signup {
+    margin-top: 10px;
+    .seven { text-align: center; }
+  }
+}
+
+.convince_your_boss {
+  li {
+    list-style-image: none;
+    list-style-type: disc;
+  }
+}
+
+.video-list .row {
+  margin-bottom: 100px;
+  h3 a {
+    vertical-align: top;
+    span.arrow-right {
+      float:none;
+    }
+  }
+}

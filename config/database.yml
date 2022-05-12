@@ -1,0 +1,10 @@
+
+production:
+  adapter:   postgresql
+  database:  'distill'
+  username:  'deploy'
+  password:  '4GlBKo56PD'
+  host:      'ec2-54-245-104-241.us-west-2.compute.amazonaws.com'
+  reconnect: true
+
+

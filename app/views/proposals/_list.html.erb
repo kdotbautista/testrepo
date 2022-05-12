@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th colspan="3">Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @proposals.each do |proposal| %>
+      <tr>
+        <td><%= proposal.title %></td>
+        <td><%= link_to '<i class="general foundicon-edit"></i>&nbsp;Edit'.html_safe, edit_proposal_path(proposal) %></td>
+        <td><%= link_to '<i class="general foundicon-trash"></i>&nbsp;Delete'.html_safe, proposal, method: :delete, data: { confirm: 'Are you sure you want to delete this Proposal?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

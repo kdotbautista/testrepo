@@ -1,0 +1,16 @@
+<h2>Profile</h2>
+<% if @speaker.errors.present? then %>
+<div class="alert alert-danger">
+  Complete profile to finalize submission.
+</div>
+<% end %>
+<p>
+  <%=  link_to "Edit Profile".html_safe, "/speakers/#{@speaker.id}/edit", {:class => "btn foundicon-edit"} %>
+</p>
+<%= render "speakers/photo" %>
+<strong><%= @speaker["name"] %></strong><br>
+<%= @speaker["email"] %><br>
+<%- if not @speaker["website"].blank? then %>
+<%= link_to @speaker["website"], @speaker["website"] %><br>
+<% end %>
+<%= simple_format @speaker["bio"], {}, :sanitize => true %>

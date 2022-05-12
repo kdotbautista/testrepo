@@ -1,0 +1,7 @@
+<div class="speaker-thumb">
+  <%- if @speaker["photo_file_name"].blank? then %>
+      <i class="social foundicon-torso"></i>
+  <%- else %>
+      <%=  image_tag @speaker.photo.url(:thumb) %>
+  <%- end %>
+</div>
